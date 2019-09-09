@@ -1,0 +1,9 @@
+{
+  "printWidth": 100,
+  "editor.formatOnSave": true,
+  "jsxBracketSameLine": false,
+  "bracketSpacing": true,
+  "jsxSingleQuote": false,
+  "semi": true,
+  "tabWidth": 2
+}

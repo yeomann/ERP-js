@@ -1,0 +1,191 @@
+@media (max-width: 1150px) {
+  .main-sidebar {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+
+  .main-content.offset-md-3 {
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+// dirty fix
+a.text-nowrap.px-3.dropdown-toggle.nav-link {
+  cursor: pointer;
+}
+a.navbar-brand span {
+  font-size: 0.8rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.green {
+  color: green;
+}
+.red {
+  color: #e92e20;
+}
+
+.fullscreenLoader {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.81);
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.fullLayout {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 5rem !important;
+}
+.upper-seperator.nav-item {
+  border-top: 2px solid #e1dede;
+}
+.lower-seperator.nav-item {
+  border-bottom: 2px solid #e1dede;
+}
+
+.loginCard {
+  width: 400px;
+}
+
+.main-content-container {
+  min-height: calc(100vh - 100px);
+}
+.main-footer {
+  height: inherit;
+}
+
+ul.small-cat {
+  max-height: 22rem;
+  overflow: auto;
+  overflow-x: hidden;
+  li {
+    padding: 4px 0 !important;
+  }
+}
+.countStyle {
+  font-style: italic;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cat-title {
+  color: inherit;
+}
+
+.cat-edit-link {
+  margin: 0 15px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-left {
+  align-items: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-right {
+  justify-content: flex-end;
+}
+
+.textWrap {
+  white-space: pre-wrap;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.w-clr {
+  color: #fff;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.vis-hidden {
+  visibility: hidden;
+}
+
+.restaurant-table {
+  th {
+    font-weight: normal;
+  }
+}
+
+.cityRegions-badges-container {
+  overflow: auto;
+  span {
+    margin-left: 0.3rem;
+  }
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.orderIDcount {
+  display: inline-block;
+  width: 30px;
+}
+
+.orderIDlabel {
+  margin-left: 30px;
+}
+
+// .orderTitle {
+//   // width: 20%;
+// }
+
+.orderDetailsItem {
+  display: flex;
+  justify-content: space-between;
+  .name {
+    width: 80%;
+    overflow: hidden;
+  }
+  .price {
+    color: #e92e20;
+  }
+}
+
+.restaurant__saveContainer {
+  .saveBtn {
+    font-size: 0.9rem;
+  }
+}
+
+.restaurant__uploadInput {
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: pre-wrap;
+}
