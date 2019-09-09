@@ -4,6 +4,7 @@ import {
   Row,
   Col,
   Card,
+  CardHeader,
   CardBody,
   Form,
   FormGroup,
@@ -56,7 +57,11 @@ class StockEditor extends React.PureComponent {
   render() {
     return (
       <Card className="mb-3">
-        <CardBody>
+        <CardHeader className="pb-0">
+          {" "}
+          <h4>General Info</h4>
+        </CardHeader>
+        <CardBody className="pt-3">
           <StockContext.Consumer>
             {context => (
               <Form className="add-new-post">

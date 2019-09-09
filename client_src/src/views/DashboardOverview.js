@@ -47,7 +47,7 @@ export class DashboardOverview extends React.PureComponent {
                 }
               ]}
               chartLabels={[null, null, null, null, null, null, null]}
-              label="No of Registered Restaurants in the System"
+              label="Count of Stock Lists in the System"
               value={this.props.restaurantsCount}
             />
           </Col>

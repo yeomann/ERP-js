@@ -29,7 +29,7 @@ export class Menu extends Component {
     // console.log(this.context.states.menusData);
 
     this.addNewStockItemColumn = this.addNewStockItemColumn.bind(this);
-    this.removeMenuColumn = this.removeMenuColumn.bind(this);
+    this.removeStockItemColumn = this.removeStockItemColumn.bind(this);
   }
 
   remoteMenuDataUpdate = (state, total) => {
@@ -40,19 +40,23 @@ export class Menu extends Component {
     });
   };
 
+  // NOTE: update columns stockItemDetails etc
   // Remote function, Triggered by Child
   // Set menu items to there respective categories
-  setMenuItems = (menuObject, context) => {
-    const menuCategory = menuObject.columns["column-1"];
-    const menuCategoryId = menuCategory.parentColumnId;
-    const menuCategoryName = menuCategory.title;
-    const menuItems = menuObject.tasks; // assing all menu items
-    const menuItemsOrder = menuCategory.menuItemIds; // get menu items order
-    console.log(`Incoming menu items of ${menuCategoryName} of id ${menuCategoryId}`);
+  updateStockMenuItems = (stockColumnId, stockColumnObject, context) => {
+    console.log(stockColumnId, stockColumnObject);
+    // return;
+    const updateColumnName = stockColumnObject.updatedStockItemDetails.name;
+    const updatedItems = stockColumnObject.updatedStockItemDetails; // assing all stock items
+    console.log(`Incoming column name: ${updateColumnName} of id ${stockColumnId}`);
+
     const newState = this.state.menuColumns.map(item =>
-      item.id === menuCategoryId ? { ...item, ...{ menuItems }, ...{ menuItemsOrder } } : item
+      item.id === stockColumnId
+        ? { ...item, ...{ name: updateColumnName, stockItemDetails: updatedItems } }
+        : item
     );
-    // console.log(newState);
+    console.log("udpated newState will be...");
+    console.log(newState);
     // this.props.menusData(newState);
     // console.log(this);
     // console.log(this.context.states);
@@ -95,8 +99,8 @@ export class Menu extends Component {
     console.log("AFTERencodeURIComponent=>" + catName);
   }
   // Remove a Category from Menu
-  removeMenuColumn(id, context) {
-    console.log("removeMenuColumn");
+  removeStockItemColumn(id, context) {
+    console.log("removeStockItemColumn");
     console.log(id);
     this.setState(
       {
@@ -111,7 +115,7 @@ export class Menu extends Component {
   // menusData={(data) => context.setMenuData(data)}
   render() {
     // const { numberOfMenuCategories } = this.state;
-    // removeMenuColumn={id => this.removeMenuColumn(id, context)}
+    // removeStockItemColumn={id => this.removeStockItemColumn(id, context)}
 
     return (
       <StockContext.Consumer>
@@ -120,10 +124,10 @@ export class Menu extends Component {
             <CardBody>
               <Row>
                 <Col>
-                  <h5>{context.states.menuHeading}</h5>
+                  <h4>{context.states.menuHeading}</h4>
                   <AddStockModal handler={this.addNewStockItemColumn} />
                   <hr />
-                  {/* {JSON.stringify(this.state.menuColumns)} */}
+                  {JSON.stringify(this.state.menuColumns)}
                   {/* [{"id":1,"name":"Test%20Product%201"}] */}
 
                   <ColumnsContainerDiv style={{ overflowX: "auto" }}>
@@ -138,8 +142,10 @@ export class Menu extends Component {
                           key={item.id}
                           columnId={item.id}
                           namespace={`column-${item.id}`}
-                          removeMenuColumn={id => this.removeMenuColumn(id, context)}
-                          childStates={menuObj => this.setMenuItems(menuObj, context)}
+                          removeStockItemColumn={id => this.removeStockItemColumn(id, context)}
+                          updateStockItemColumn={(id, obj) =>
+                            this.updateStockMenuItems(id, obj, context)
+                          }
                           stockItemDetails={
                             typeof item.stockItemDetails !== "undefined"
                               ? item.stockItemDetails

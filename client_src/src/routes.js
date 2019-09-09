@@ -44,18 +44,31 @@ export default [
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Redirect to="api-overview" />
+    component: () => <Redirect to="erp-dashboard" />
   },
   {
-    path: "/api-overview",
+    path: "/erp-dashboard",
     layout: DefaultLayout,
     component: DashboardOverview
   },
+  // customer-contact-list
   {
     path: "/customer-contact-list",
     layout: DefaultLayout,
     component: CustomerContactList
   },
+  // stocks
+  {
+    path: "/add-stock",
+    layout: DefaultLayout,
+    component: StockHandler
+  },
+  {
+    path: "/stocks",
+    layout: DefaultLayout,
+    component: Stocks
+  },
+  // order
   {
     path: "/restaurants",
     layout: DefaultLayout,
@@ -71,16 +84,7 @@ export default [
     layout: DefaultLayout,
     component: RestaurantHandler
   },
-  {
-    path: "/categories",
-    layout: DefaultLayout,
-    component: Stocks
-  },
-  {
-    path: "/add-stock",
-    layout: DefaultLayout,
-    component: StockHandler
-  },
+
   {
     path: "/edit-category/:id",
     layout: DefaultLayout,

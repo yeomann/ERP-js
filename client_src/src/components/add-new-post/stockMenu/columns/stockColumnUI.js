@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Modal, ModalBody, ModalHeader, FormInput } from "shards-react";
+import { Button, Modal, ModalBody, ModalHeader } from "shards-react";
 import styled from "styled-components";
 // import InnerList from "./innerList";
 import AddStockDetails from "./addStockDetails";
@@ -29,7 +29,7 @@ const AddProductDetailsContainerDiv = styled.div`
   }
 `;
 
-export class Column extends Component {
+export class StockColumnUI extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,9 +38,6 @@ export class Column extends Component {
     };
     // funcs
     this.toggle = this.toggle.bind(this);
-    this.addListItem = this.addListItem.bind(this);
-    // ref
-    this.menuNameInput = React.createRef();
   }
 
   componentWillUnmount() {
@@ -63,67 +60,16 @@ export class Column extends Component {
     this.toggle(); // closing model
     console.log(`deletColumnHandler with columnId ${columnId}`); // column id, which when is selected
     // console.log(columnId); // column id, which when is selected
-    this.props.removeMenuColumn(columnId);
+    // NOTE: calling parent to remove the column
+    this.props.removeStockItemColumn(columnId);
   };
-
-  /*
-   * Add menu NAME handler (name only at first, after this content part comes underneath)
-   * NOTE: Menu item name -  bcz of &amp we need to convert this and saved in DB as encodeURIComponent
-   * Menu item VALUE
-   * finally calling addTaskHandler from parent props to add item in column
-   */
-  addListItem(whichColumn) {
-    // const newMenuName = encodeURIComponent(this.menuNameInput.current.value);
-    const newMenuName = encodeURIComponent(this.menuNameInput.current.value);
-    console.log(newMenuName);
-    if (newMenuName.length === 0 || newMenuName.length < 4) {
-      return this.setInValid();
-    }
-    this.setValid();
-    // console.log(`whichColumn = ${whichColumn}`);
-
-    // const currentNoOfTasks = Object.keys(this.props.tasks).length;
-    // const newTaskId = `task-${currentNoOfTasks + 1}`;
-    const newTaskId = `menu-${this.props.nextId}`;
-
-    // console.log(`newTaskId = ${newTaskId}`);
-    // const newTask = this.props.tasks.push({
-    //   id: newTaskId,
-    //   content: newMenuName
-    // });
-    const newState = {
-      // tasks: { "task-4": { id: "task-4", content: "Menu Name 4" }, ..... }
-      tasks: {
-        ...this.props.allTasks,
-        // newTask with default content obj
-        [`${newTaskId}`]: {
-          id: newTaskId,
-          name: newMenuName,
-          /*
-           * NOTE: default content after creating the name of menu item
-           */
-          content: {
-            price: "10",
-            menuTags: "",
-            outOfOrder: "false"
-          }
-        }
-      },
-      columns: {
-        ...this.props.allColumns,
-        ...this.props.allColumns[whichColumn].menuItemIds.push(newTaskId)
-      }
-    };
-    this.props.addTaskHandler(newState);
-    this.menuNameInput.current.value = "";
-  }
 
   render() {
     /*
      * NOTE: Category VALUE is encodeURIComponent so decodeURIComponent to before showing
      * Decode and Display Category VALUE
      */
-    const { title, columnId } = this.props.column;
+    const { title } = this.props.column;
     const { open } = this.state;
     return (
       <ContainerMainDiv>
@@ -145,22 +91,16 @@ export class Column extends Component {
           </Modal>
         </TitleContainerDiv>
         <AddProductDetailsContainerDiv>
-          {/* <FormInput
-            id="addMenuItem"
-            innerRef={this.menuNameInput}
-            valid={this.state.valid}
-            invalid={this.state.invalid}
-            placeholder={"Enter Menu Name"}
-          /> */}
           <AddStockDetails
+            name={this.props.name}
             stockItemDetails={this.props.stockItemDetails}
             columnId={this.props.columnId}
+            updateStockItemColumn={this.props.updateStockItemColumn}
           />
-          {/* <Button onClick={this.addListItem.bind(this, columnId)}>Save</Button> */}
         </AddProductDetailsContainerDiv>
       </ContainerMainDiv>
     );
   }
 }
 
-export default Column;
+export default StockColumnUI;

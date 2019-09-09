@@ -17,9 +17,9 @@ import {
 // components
 import PageTitle from "../../components/common/PageTitle";
 import StockEditor from "../../components/add-new-post/EditorStock";
-import SidebarActions from "../../components/add-new-post/customSidebarActions";
-import SidebarSelectCategory from "../../components/add-new-post/restaurant/SidebarSelectCategory";
-import Logo from "../../components/add-new-post/logo";
+import SidebarActions from "../../components/add-new-post/stockSidebarActions";
+// import SidebarSelectCategory from "../../components/add-new-post/restaurant/SidebarSelectCategory";
+import Logo from "../../components/add-new-post/stockLogo";
 import StockMenu from "../../components/add-new-post/stockMenu/";
 
 const InitialState = {
@@ -232,7 +232,8 @@ class AddNewStock extends React.PureComponent {
         console.log(JSON.stringify(states.restaurantData));
         console.log("%c states.menuData", "background: black; color: #FFF");
         console.log(states.menuData);
-        this.props.editRestaurantWithoutLogo(restaurantID, states.restaurantData, states.menuData);
+        // NOTE: API CALL
+        // this.props.editRestaurantWithoutLogo(restaurantID, states.restaurantData, states.menuData);
       }
       return;
     }
@@ -242,25 +243,26 @@ class AddNewStock extends React.PureComponent {
     if (this.validate(states)) {
       // Validation is passed, we can submit to server now.
       alert("Everything looks good 👌, Saving ...");
+      // eslint-disable-next-line no-unused-vars
       const restID = 0; // new restaurant
-      // trying to send to server
-      this.props.postRestaurant(
-        restID,
-        states.logo,
-        states.restaurantData,
-        states.menuData
-        // states.cityAndRegion
-      );
+      // NOTE: API CALL - trying to send to server
+      // this.props.postRestaurant(
+      //   restID,
+      //   states.logo,
+      //   states.restaurantData,
+      //   states.menuData
+      //   // states.cityAndRegion
+      // );
       // USING TO SHOW LOCALLY
       this.setState({
-        restaurantContext: states,
+        localWholeContext: states,
         localStateErr: false
       });
     } else {
       // Validation is failed; Showing Error
       this.setState(
         {
-          restaurantContext: states,
+          localWholeContext: states,
           localStateErr: true
         },
         () => {
@@ -296,7 +298,7 @@ class AddNewStock extends React.PureComponent {
             theme="white"
             className="px-2"
             onClick={() =>
-              this.props.history.replace("/restaurants", {
+              this.props.history.replace("/stocks", {
                 isComingBack: true
               })
             }
@@ -328,9 +330,9 @@ class AddNewStock extends React.PureComponent {
                   {/* Restauarant Info */}
                   <StockEditor ref={this.editorRef} templateType={this.props.templateType} />
                   {/* TEST */}
-                  {/* <pre style={{ maxHeight: "300px" }}>
-                    {JSON.stringify(this.state.StockContext, null, 2)}
-                  </pre> */}
+                  <pre style={{ maxHeight: "300px" }}>
+                    {JSON.stringify(this.state.localWholeContext, null, 2)}
+                  </pre>
                   {/* Restauarant Menu Management */}
                   <StockMenu ref={this.restauarantMenuRef} templateType={this.props.templateType} />
                 </Col>
@@ -342,15 +344,6 @@ class AddNewStock extends React.PureComponent {
                       onSaveEvent={this.onSaveEvent.bind(this, context.getRestaurantData())}
                       isThisEditing={this.state.isThisEditingFlag}
                     />
-                    {/* Category Box */}
-                    {/* <SidebarSelectCategory
-                      ref={this.categoriesRef}
-                      onSelect={selectedCategory => {
-                        // console.log("calling from parent to -category");
-                        // console.log(selectedCategory);
-                        context.setCategory(selectedCategory);
-                      }}
-                    /> */}
                     {/* Select / Update Logo Box */}
                     <Logo
                       ref={this.logoRef}

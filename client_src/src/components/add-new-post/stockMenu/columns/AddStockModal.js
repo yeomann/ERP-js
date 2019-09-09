@@ -68,7 +68,9 @@ export class AddColumn extends Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>Add Product</Button>
+        <Button style={{ padding: "1.1rem", fontSize: "1rem" }} block onClick={this.toggle}>
+          <u>Add Product and Details</u>
+        </Button>
         <Modal open={open} toggle={this.toggle}>
           <ModalHeader>
             <span role="img" aria-label="hi">

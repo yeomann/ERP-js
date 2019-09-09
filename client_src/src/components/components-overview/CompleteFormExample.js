@@ -57,7 +57,7 @@ const CompleteFormExample = () => (
               </Col>
               <Col md="12" className="form-group">
                 <FormCheckbox>
-                  {/* eslint-disable-next-line */}I agree with your <a href="#">Privacy Policy</a>.
+                  {/* eslint-disable-next-line */}I agree with your Privacy Policy.
                 </FormCheckbox>
               </Col>
             </Row>

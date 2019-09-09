@@ -2,7 +2,7 @@ export default function() {
   return [
     {
       title: "Api Dashboard",
-      to: "/api-overview",
+      to: "/erp-dashboard",
       htmlBefore: '<i class="material-icons">edit</i>',
       htmlAfter: ""
     },
@@ -27,29 +27,14 @@ export default function() {
       to: "/customer-contact-list"
     },
     {
-      title: "Restaurants",
-      htmlBefore: '<i class="material-icons">fastfood</i>',
-      to: "/restaurants"
-    },
-    {
       title: "Stocks",
       htmlBefore: '<i class="material-icons">category</i>',
-      to: "/categories"
+      to: "/stocks"
     },
     {
       title: "Add New Stock",
       htmlBefore: '<i class="material-icons">playlist_add</i>',
       to: "/add-stock"
-    },
-    {
-      title: "Cities & Regions",
-      htmlBefore: '<i class="material-icons">category</i>',
-      to: "/citiesRegions"
-    },
-    {
-      title: "Add New City & Region",
-      htmlBefore: '<i class="material-icons">playlist_add</i>',
-      to: "/add-city-region"
     },
     {
       title: "Forms & Components",

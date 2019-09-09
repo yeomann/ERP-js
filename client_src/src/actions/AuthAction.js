@@ -123,7 +123,7 @@ export const LoginUserCall = (email, password, history) => {
           });
           // redirect on successful login
           window.location.href = "/";
-          // history.replace("/api-overview");
+          // history.replace("/erp-dashboard");
           return true;
         }
         dispatch({

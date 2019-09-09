@@ -42,7 +42,7 @@ class SidebarMainNavbar extends React.Component {
                 alt="Shards Dashboard"
               />
               {!hideLogoText && (
-                <span className="d-none d-md-inline ml-1">Foodish API Dashboard</span>
+                <span className="d-none d-md-inline ml-1">Magin ERP Dashboard</span>
               )}
             </div>
           </NavbarBrand>

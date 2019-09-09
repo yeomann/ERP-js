@@ -33,7 +33,10 @@ export default class RestaurantProvider extends React.Component {
           setMenuData: data => {
             window.menuDataBefore = this.state.menusData;
             this.setState({ menusData: data }, () => {
-              console.log("%c MENU DATA Updated", "background:red; color:#FFF");
+              console.log(
+                "%c STOCK MENU DATA Updated => window.menuDataAfter",
+                "background:red; color:#FFF"
+              );
               console.log(this.state.menusData);
               window.menuDataAfter = this.state.menusData;
             });

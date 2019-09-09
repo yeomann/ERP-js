@@ -22,10 +22,7 @@ export class StockDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productName:
-        props.stockItemDetails && Object.keys(props.stockItemDetails).length !== 0
-          ? props.stockItemDetails.productName
-          : "",
+      productName: props.name && props.name.length !== 0 ? props.name : "",
       productCode:
         props.stockItemDetails && Object.keys(props.stockItemDetails).length !== 0
           ? props.stockItemDetails.productCode
@@ -98,9 +95,9 @@ export class StockDetails extends Component {
       else if (priceValue === "" || priceValue === "-") this.setState({ buyCostPrice: priceValue });
     }
     // can we send now?
-    const listId = this.props.columnId;
+    const columnId = this.props.columnId;
     const contentState = {
-      content: {
+      updatedStockItemDetails: {
         name: encodeURIComponent(this.nameRef.current.value),
         code: encodeURIComponent(this.codeRef.current.value),
         color: encodeURIComponent(this.colorRef.current.value),
@@ -110,9 +107,9 @@ export class StockDetails extends Component {
       }
     };
     // console.log(typeof this.outOfOrderRef.current.value, this.outOfOrderRef.current.value);
-    console.log("can we send now List id ", this.props.stockItemDetails.id);
-    // Time to send back with new updated values of Particular list
-    return this.props.updateListItem(listId, contentState);
+    console.log("can we send now List id ", columnId);
+    // NOTE: parent method - Time to send back with new updated values of Particular list
+    return this.props.updateStockItemColumn(columnId, contentState);
   };
 
   render() {
