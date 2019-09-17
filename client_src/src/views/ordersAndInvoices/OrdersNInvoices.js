@@ -13,7 +13,7 @@ const TOAST_OPTION = {
   autoClose: 5500
 };
 
-export class StocksList extends PureComponent {
+export class Restaurants extends PureComponent {
   componentDidMount() {
     // if (this.props.location.state === void 0) this.props.getRestaurants(true);
     // this.props.getRestaurants(true);
@@ -202,12 +202,12 @@ export class StocksList extends PureComponent {
           <Row noGutters className="page-header py-4 d-flex justify-between">
             <PageTitle
               sm="4"
-              title="Stocks Lists"
+              title="All Order and Invoices Lists"
               subtitle={process.env.REACT_APP_SECRET_APP_NAME}
               className="text-sm-left"
             />
             <Button squared theme="info" size="lg" onClick={() => history.push("/add-stock")}>
-              Add Stock
+              Add Order
             </Button>
           </Row>
           {/* Default Light Table */}
@@ -223,19 +223,19 @@ export class StocksList extends PureComponent {
                             #
                           </th>
                           <th scope="col" className="border-0 bold">
-                            Stock Name
+                            Fatura No
                           </th>
                           <th scope="col" className="border-0">
                             Date & Time
                           </th>
                           <th scope="col" className="border-0">
-                            <u>View Products Information</u>
+                            <u>Siparişleri Görüntüle</u>
                           </th>
                           <th scope="col" className="border-0">
-                            <u>Edit Blelow</u>
+                            <u>Düzenle</u>
                           </th>
                           <th scope="col" className="border-0 bold">
-                            1-Click Delete
+                            1-Tıkla Sil
                           </th>
                         </tr>
                       </thead>
@@ -273,4 +273,4 @@ export default connect(
     deleteRestaurant,
     getCategories
   }
-)(StocksList);
+)(Restaurants);

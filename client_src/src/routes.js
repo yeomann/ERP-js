@@ -14,18 +14,33 @@ import AddNewPost from "./views/AddNewPost";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
-import Restaurants from "./views/Restaurants";
-import RestaurantHandler from "./views/restaurant/RestaurantHandler";
+// import Restaurants from "./views/Restaurants";
+// import RestaurantHandler from "./views/restaurant/RestaurantHandler";
 // import EditRestaurant from "./views/restaurant/EditRestaurant";
 import Customers from "./views/customers";
-import CustomerContactList from "./views/CustomerContactList";
 import Orders from "./views/orders";
 import OrderDetails from "./views/OrderDetails";
 // STOCK
 import StockHandler from "./views/stock/StockHandler";
 import EditStock from "./views/stock/EditStock";
 import Stocks from "./views/stock/Stocks";
-
+// Order and Invocies
+import OrderHandler from "./views/ordersAndInvoices/OrderHandler";
+// import EditStock from "./views/ordersAndInvoices/EditStock";
+import OrdersNInvoices from "./views/ordersAndInvoices/OrdersNInvoices";
+// supplier-list
+import SuppliersList from "./views/suppliersList/supplier-lists";
+import AddEditSupplier from "./views/suppliersList/addEditSupplier";
+// CustomerWithDebits
+import CustomerWithDebits from "./views/customerWithDebits/customer-with-debits";
+import AddEditCustomerWithDebits from "./views/customerWithDebits/addEditCustomerWithDebits";
+// CustomerContactList
+import CustomerContactList from "./views/customerContactsList/CustomerContactList";
+import AddEditCustomerContact from "./views/customerContactsList/addCustomerContact";
+// HR-system
+import HRSystem from "./views/hrSystem/hrSystemList";
+import AddEditHrEntery from "./views/hrSystem/addHREntery";
+// other
 import CitiesRegions from "./views/CitiesRegions";
 // import AddNewCityRegion from "./views/AddNewCityRegion";
 import CitiesRegionsHandler from "./views/cityAndRegion/CitiesRegionsHandler";
@@ -51,11 +66,47 @@ export default [
     layout: DefaultLayout,
     component: DashboardOverview
   },
+  // SuppliersList
+  {
+    path: "/supplier-list",
+    layout: DefaultLayout,
+    component: SuppliersList
+  },
+  {
+    path: "/add-supplier-list",
+    layout: DefaultLayout,
+    component: AddEditSupplier
+  },
+  {
+    path: "/customer-with-debits-veresiye",
+    layout: DefaultLayout,
+    component: CustomerWithDebits
+  },
+  {
+    path: "/add-customer-with-debits-veresiye",
+    layout: DefaultLayout,
+    component: AddEditCustomerWithDebits
+  },
   // customer-contact-list
   {
     path: "/customer-contact-list",
     layout: DefaultLayout,
     component: CustomerContactList
+  },
+  {
+    path: "/add-customer-contact-list",
+    layout: DefaultLayout,
+    component: AddEditCustomerContact
+  },
+  {
+    path: "/HR-system",
+    layout: DefaultLayout,
+    component: HRSystem
+  },
+  {
+    path: "/add-HR-entery",
+    layout: DefaultLayout,
+    component: AddEditHrEntery
   },
   // stocks
   {
@@ -70,19 +121,19 @@ export default [
   },
   // order
   {
-    path: "/restaurants",
+    path: "/orders-invoices",
     layout: DefaultLayout,
-    component: Restaurants
+    component: OrdersNInvoices
   },
   {
-    path: "/create-order",
+    path: "/add-order",
     layout: DefaultLayout,
-    component: RestaurantHandler
+    component: OrderHandler
   },
   {
     path: "/edit-restaurant/:id/:isEditRestaurant",
     layout: DefaultLayout,
-    component: RestaurantHandler
+    component: OrderHandler
   },
 
   {
@@ -136,7 +187,7 @@ export default [
     component: OrderDetails
   },
   {
-    path: "/user-profile-foodish",
+    path: "/user-profile-erp",
     layout: DefaultLayout,
     component: UserProfileLite
   },

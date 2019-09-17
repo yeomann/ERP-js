@@ -46,7 +46,7 @@ UserDetails.propTypes = {
 UserDetails.defaultProps = {
   userDetails: {
     name: "Magic ERP",
-    avatar: require("./../../images/avatars/avatar.svg"),
+    avatar: require("./../../images/shards-dashboards-logo-success.svg"),
     jobTitle: "Admin Profile",
     performanceReportTitle: "Workload",
     performanceReportValue: 94,

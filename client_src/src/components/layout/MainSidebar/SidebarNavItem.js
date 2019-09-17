@@ -11,11 +11,17 @@ const SidebarNavItem = ({ item }) => {
     <NavItem
       className={`${
         // item.title === "Orders" || item.title === "Restaurants" ? "upper-seperator" : ""
-        item.to.substr(1) === "getAllOrders" ? "upper-seperator" : ""
+        item.to.substr(1) === "orders-invoices" ||
+        item.to.substr(1) === "stocks" ||
+        item.to.substr(1) === "supplier-list"
+          ? "upper-seperator"
+          : ""
       }
          ${
            //  item.title === "Customers" || item.title === "Add New Restaurant"
-           item.to.substr(1) === "customer-contact-list" ? "lower-seperator" : ""
+           item.to.substr(1) === "customer-contact-list" || item.to.substr(1) === "HR-system"
+             ? "lower-seperator"
+             : ""
          }`}
     >
       <NavLink tag={RouteNavLink} to={item.to}>

@@ -9,22 +9,12 @@ export default function() {
     {
       title: "Sipariş ve Faturalar",
       htmlBefore: '<i class="material-icons">shopping_cart</i>',
-      to: "/getAllOrders"
+      to: "/orders-invoices"
     },
     {
       title: "Sipariş yarat",
       htmlBefore: '<i class="material-icons">playlist_add</i>',
-      to: "/create-order"
-    },
-    {
-      title: "Customers",
-      htmlBefore: '<i class="material-icons">accessibility_new</i>',
-      to: "/customers"
-    },
-    {
-      title: "Customer Contact List",
-      htmlBefore: '<i class="material-icons">contact_phone</i>',
-      to: "/customer-contact-list"
+      to: "/add-order"
     },
     {
       title: "Stocks",
@@ -37,6 +27,31 @@ export default function() {
       to: "/add-stock"
     },
     {
+      title: "Supplier Lists",
+      htmlBefore: '<i class="material-icons">list_alt</i>',
+      to: "/supplier-list"
+    },
+    {
+      title: "Customer with Debits (Veresiye)",
+      htmlBefore: '<i class="material-icons">account_balance_wallet</i>',
+      to: "/customer-with-debits-veresiye"
+    },
+    {
+      title: "Customers",
+      htmlBefore: '<i class="material-icons">accessibility_new</i>',
+      to: "/customers"
+    },
+    {
+      title: "Customer Contact List",
+      htmlBefore: '<i class="material-icons">contact_phone</i>',
+      to: "/customer-contact-list"
+    },
+    {
+      title: "HR System",
+      htmlBefore: '<i class="material-icons">emoji_people</i>',
+      to: "/HR-system"
+    },
+    {
       title: "Forms & Components",
       htmlBefore: '<i class="material-icons">view_module</i>',
       to: "/components-overview"
@@ -44,7 +59,7 @@ export default function() {
     {
       title: "Admin Profile",
       htmlBefore: '<i class="material-icons">person</i>',
-      to: "/user-profile-foodish"
+      to: "/user-profile-erp"
     }
     // {
     //   title: "Tables",

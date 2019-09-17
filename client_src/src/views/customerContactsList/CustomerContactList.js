@@ -15,8 +15,8 @@ import {
   ModalBody
 } from "shards-react";
 import { connect } from "react-redux";
-import { getCustomers, deleteCustomer } from "../actions/GeneralAction";
-import PageTitle from "../components/common/PageTitle";
+import { getCustomers, deleteCustomer } from "../../actions/GeneralAction";
+import PageTitle from "../../components/common/PageTitle";
 
 export class CustomerContactList extends PureComponent {
   constructor(props) {
@@ -82,12 +82,30 @@ export class CustomerContactList extends PureComponent {
     const {
       customerContactList: allCustomerContactList,
       customerContactLoader: loader,
-      deleteCustomerContactListLoader: deleteLoader
+      deleteCustomerContactListLoader: deleteLoader,
+      history
     } = this.props;
     const customerNotFound =
       !this.props.customerContactLoader && Object.keys(this.props.customerContactList).length === 0;
     return (
       <Container fluid className="main-content-container px-4">
+        {/* Page Header */}
+        <Row noGutters className="page-header py-4 d-flex justify-between">
+          <PageTitle
+            sm="4"
+            title="Customer Contact List"
+            subtitle={process.env.REACT_APP_SECRET_APP_NAME}
+            className="text-sm-left"
+          />
+          <Button
+            squared
+            theme="warning"
+            size="lg"
+            onClick={() => history.push("/add-customer-contact-list")}
+          >
+            Add Customer Contact
+          </Button>
+        </Row>
         <Modal open={open} toggle={this.toggle}>
           <ModalHeader>Delete Action</ModalHeader>
           <ModalBody>
@@ -98,15 +116,6 @@ export class CustomerContactList extends PureComponent {
             <Button onClick={this.delete}>Ok, Delete it!</Button>
           </ModalBody>
         </Modal>
-        {/* Page Header */}
-        <Row noGutters className="page-header py-4">
-          <PageTitle
-            sm="4"
-            title="Customer Contact List"
-            subtitle={process.env.REACT_APP_SECRET_APP_NAME}
-            className="text-sm-left"
-          />
-        </Row>
         {/* Categories */}
         <Row>
           <Col>

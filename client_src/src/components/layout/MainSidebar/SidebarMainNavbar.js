@@ -24,26 +24,41 @@ class SidebarMainNavbar extends React.Component {
         <Navbar
           className="align-items-stretch bg-white flex-md-nowrap border-bottom p-0"
           type="light"
+          style={{ height: "88px" }}
         >
-          <NavbarBrand className="w-100 mr-0" href="/" style={{ lineHeight: "25px" }}>
+          <NavbarBrand
+            className="w-100 mr-0"
+            href="/"
+            style={{ lineHeight: "25px", height: "inherit", textAlign: "center" }}
+          >
             <div
               style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%"
+                display: "block",
+                width: "100%",
+                height: "inherit"
               }}
             >
-              <img
-                id="main-logo"
-                className="d-inline-block align-top mr-1"
-                style={{ maxWidth: "44px" }}
-                src={require("../../../images/foodishLogo.jpg")}
-                alt="Shards Dashboard"
-              />
-              {!hideLogoText && (
-                <span className="d-none d-md-inline ml-1">Magin ERP Dashboard</span>
-              )}
+              <div
+                style={{
+                  display: "block"
+                }}
+              >
+                <img
+                  id="main-logo"
+                  className="d-inline-block align-top mr-1"
+                  style={{ maxWidth: "190px" }}
+                  src={require("../../../images/MagicTouchERPLogo.png")}
+                  alt="Shards Dashboard"
+                />
+              </div>
+              <div
+                style={{
+                  display: "block",
+                  marginTop: "-10px"
+                }}
+              >
+                {!hideLogoText && <span className="d-none d-md-inline ml-1">Magic ERP System</span>}
+              </div>
             </div>
           </NavbarBrand>
           {/* eslint-disable-next-line */}

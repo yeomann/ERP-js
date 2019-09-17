@@ -6,14 +6,14 @@ import { Container, Row, Col, Card, CardBody, Button, Badge } from "shards-react
 // components
 import PageTitle from "../../components/common/PageTitle";
 // Action
-import { getRestaurants, deleteRestaurant, getCategories } from "../../actions/GeneralAction";
+// import { getRestaurants, deleteRestaurant, getCategories } from "../../actions/GeneralAction";
 import { toast } from "react-toastify";
 
 const TOAST_OPTION = {
   autoClose: 5500
 };
 
-export class StocksList extends PureComponent {
+export class HRSystemList extends PureComponent {
   componentDidMount() {
     // if (this.props.location.state === void 0) this.props.getRestaurants(true);
     // this.props.getRestaurants(true);
@@ -177,7 +177,7 @@ export class StocksList extends PureComponent {
     } else if (!loader && Object.keys(restaurants).length === 0) {
       return (
         <tr>
-          <td className="p-3">No Stock entery found in ERP system.</td>
+          <td className="p-3">No entery found in HR module of ERP system.</td>
         </tr>
       );
     }
@@ -202,12 +202,12 @@ export class StocksList extends PureComponent {
           <Row noGutters className="page-header py-4 d-flex justify-between">
             <PageTitle
               sm="4"
-              title="Stocks Lists"
+              title="HR System List"
               subtitle={process.env.REACT_APP_SECRET_APP_NAME}
               className="text-sm-left"
             />
-            <Button squared theme="info" size="lg" onClick={() => history.push("/add-stock")}>
-              Add Stock
+            <Button squared theme="info" size="lg" onClick={() => history.push("/add-HR-entery")}>
+              Add new entery
             </Button>
           </Row>
           {/* Default Light Table */}
@@ -269,8 +269,8 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {
-    getRestaurants,
-    deleteRestaurant,
-    getCategories
+    // getRestaurants,
+    // deleteRestaurant,
+    // getCategories
   }
-)(StocksList);
+)(HRSystemList);
