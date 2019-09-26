@@ -223,16 +223,16 @@ export class HRSystemList extends PureComponent {
                             #
                           </th>
                           <th scope="col" className="border-0 bold">
-                            Stock Name
+                            Ad Soyad
                           </th>
                           <th scope="col" className="border-0">
-                            Date & Time
+                            Telefon numarası
                           </th>
                           <th scope="col" className="border-0">
-                            <u>View Products Information</u>
+                            Başlangıç tarihi
                           </th>
                           <th scope="col" className="border-0">
-                            <u>Edit Blelow</u>
+                            E-posta
                           </th>
                           <th scope="col" className="border-0 bold">
                             1-Click Delete

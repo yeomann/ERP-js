@@ -228,16 +228,16 @@ export class SuppliersList extends PureComponent {
                             #
                           </th>
                           <th scope="col" className="border-0 bold">
-                            Stock Name
+                            Ad Soyad
                           </th>
                           <th scope="col" className="border-0">
-                            Date & Time
+                            Hangi Firma
                           </th>
                           <th scope="col" className="border-0">
-                            <u>View Products Information</u>
+                            Şirket Adı
                           </th>
                           <th scope="col" className="border-0">
-                            <u>Edit Blelow</u>
+                            Yer
                           </th>
                           <th scope="col" className="border-0 bold">
                             1-Click Delete

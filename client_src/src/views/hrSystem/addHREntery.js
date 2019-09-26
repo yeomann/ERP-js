@@ -15,7 +15,7 @@ import {
   // Alert
 } from "shards-react";
 import PageTitle from "../../components/common/PageTitle";
-import Logo from "../../components/add-new-post/logo";
+import Logo from "../../components/add-new-post/HRSystem/logo";
 
 const Fileds = p => (
   <FormGroup>

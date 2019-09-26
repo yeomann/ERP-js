@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { CardBody, Card, Row, Col, Badge } from "shards-react";
 import Dropzone from "react-dropzone";
 
-import { API_BASE_URL } from "../../api";
+import { API_BASE_URL } from "../../../api";
 
 const INITAL_STATE = {
   isEdit: false,
