@@ -94,7 +94,7 @@ class AddEditCustomerContact extends React.PureComponent {
             theme="white"
             className="px-2"
             onClick={() =>
-              this.props.history.replace("/customer-with-debits-veresiye", {
+              this.props.history.replace("/customer-contact-list", {
                 isComingBack: true
               })
             }
@@ -132,15 +132,6 @@ class AddEditCustomerContact extends React.PureComponent {
                       </Col>
                     </Row>
                     <Row>
-                      <Col lg="6">
-                        <Fileds
-                          id="phoneNo"
-                          name="phoneNo"
-                          placeholder="İlitişim numarası"
-                          value={phoneNo}
-                          onChange={this.handleChange}
-                        />
-                      </Col>
                       <Col lg="6">
                         <Fileds
                           id="whichCompany"

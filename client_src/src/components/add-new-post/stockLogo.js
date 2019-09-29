@@ -158,8 +158,7 @@ export class Logo extends Component {
 const thumbsContainer = {
   display: "flex",
   flexDirection: "row",
-  flexWrap: "wrap",
-  marginTop: 16
+  flexWrap: "wrap"
 };
 
 const thumb = {

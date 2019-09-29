@@ -82,16 +82,7 @@ class AddEditCustomerWithDebits extends React.PureComponent {
   render() {
     // NOTE: for editing
     const { isThisEditing } = this.props;
-    const {
-      name,
-      debt,
-      whatWorkDone,
-      companyNo,
-      bankDetailsIBAN,
-      date,
-      phoneNo,
-      companyContactPerson
-    } = this.state;
+    const { name, debt, whatWorkDone, companyNo, date, phoneNo } = this.state;
     return (
       <Container fluid className="main-content-container px-4 pb-4">
         {/* Page Header */}
