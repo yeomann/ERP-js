@@ -21,6 +21,11 @@ module.exports = function(app, done) {
       username: "magicerp",
       email: "erp@magicerp.com",
       password: "1q2w3e4r5t#P@$$w0RD"
+    },
+    {
+      username: "magicerpagents",
+      email: "erpagent@magicerp.com",
+      password: "1q2w3e4"
     }
   ];
   try {
@@ -58,8 +63,8 @@ module.exports = function(app, done) {
                     principalId: users[index].id
                   },
                   function(err, principal) {
-                    // if (err) throw 'role.principals exsits';
-                    // console.log('Admin principal Created:', principal);
+                    if (err) throw "role.principals exsits";
+                    console.log("Admin principal Created:", principal);
                   }
                 )
               );
@@ -70,6 +75,7 @@ module.exports = function(app, done) {
       }
     });
 
+    console.log("done...");
     done();
   } catch (err) {
     console.log("Admin created Error: ");

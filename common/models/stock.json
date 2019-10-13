@@ -1,0 +1,23 @@
+{
+  "name": "stock",
+  "plural": "stocks",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "itemName": {
+      "type": "string",
+      "required": true
+    },
+    "productsObject": {
+      "type": ["object"],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

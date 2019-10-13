@@ -1,0 +1,47 @@
+{
+  "name": "onlineOrder",
+  "plural": "onlineOrders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nameSurname": {
+      "type": "string",
+      "required": true
+    },
+    "telefoneNo": {
+      "type": "string",
+      "required": true
+    },
+    "extraPacketPriceCheckbox": {
+      "type": "boolean",
+      "required": true
+    },
+    "socialMediaCheckbox": {
+      "type": "boolean",
+      "required": true
+    },
+    "debitAmount": {
+      "type": "string",
+      "required": true
+    },
+    "whoTookOrder": {
+      "type": "string",
+      "required": true
+    },
+    "printingOperator": {
+      "type": "string",
+      "required": true
+    },
+    "prodcutInformation": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

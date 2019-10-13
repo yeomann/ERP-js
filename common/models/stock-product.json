@@ -1,0 +1,38 @@
+{
+  "name": "stockProduct",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "howManySold": {
+      "type": "number",
+      "required": true
+    },
+    "approxCostPrice": {
+      "type": "number",
+      "required": true
+    },
+    "purchasePrice": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

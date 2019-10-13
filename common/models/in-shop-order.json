@@ -1,0 +1,41 @@
+{
+  "name": "inShopOrder",
+  "plural": "inShopOrders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nameSurname": {
+      "type": "string",
+      "required": true
+    },
+    "telefoneNo": {
+      "type": "string",
+      "required": true
+    },
+    "extraPacketPriceCheckbox": {
+      "type": "boolean",
+      "required": true
+    },
+    "socialMediaCheckbox": {
+      "type": "boolean",
+      "required": true
+    },
+    "product": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "price": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
