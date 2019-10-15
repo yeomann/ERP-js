@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": true
   },
   "AccessToken": {
     "dataSource": "db",
@@ -34,5 +35,37 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "customerContactList": {
+    "dataSource": "db",
+    "public": true
+  },
+  "supplierList": {
+    "dataSource": "db",
+    "public": true
+  },
+  "hrSystem": {
+    "dataSource": "db",
+    "public": true
+  },
+  "stock": {
+    "dataSource": "db",
+    "public": true
+  },
+  "stockProduct": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Order": {
+    "dataSource": "db",
+    "public": true
+  },
+  "inShopOrder": {
+    "dataSource": "db",
+    "public": true
+  },
+  "onlineOrder": {
+    "dataSource": "db",
+    "public": true
   }
 }

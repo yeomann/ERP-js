@@ -1,7 +1,3 @@
 {
-  "root": false,
-  "extends": "loopback",
-  "parserOptions": {
-    "ecmaVersion": 2017
-  }
+  "extends": "loopback"
 }

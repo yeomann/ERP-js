@@ -1,14 +1,6 @@
 {
   "loopback-component-explorer": {
     "mountPath": "/explorer",
-    "uiDirs": "server/explorer",
-    "apiInfo": {
-      "title": "Magic Erp Project",
-      "description": "Following RestAPI is created to for Magic touch enabling modern interactive CRUD to scale with ease. The project is funded by EBRD. Developed by Danish Raza and Cocoon&mayä Creative and Digital Agency.",
-      "contact": "idanishraza@gmail.com",
-      "license": "Apache 2.0",
-      "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    },
     "generateOperationScopedModels": true
   }
 }

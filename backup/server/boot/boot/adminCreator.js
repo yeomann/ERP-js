@@ -75,7 +75,7 @@ module.exports = function(app, done) {
       }
     });
 
-    console.log("done...");
+    console.log("Admin created - done...");
     done();
   } catch (err) {
     console.log("Admin created Error: ");
