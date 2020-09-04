@@ -16,7 +16,7 @@
     "he": "^1.2.0",
     "immutable": "^4.0.0-rc.12",
     "lodash.find": "^4.6.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "p-iteration": "^1.1.7",
     "query-string": "^6.3.0",
     "react": "^16.8.2",
